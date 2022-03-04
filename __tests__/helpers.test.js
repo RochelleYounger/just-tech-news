@@ -6,13 +6,13 @@ test('format_date() returns a date string', () => {
     expect(format_date(date)).toBe('3/20/2020');
 });
 
-test('format_plural correctly pluralizes words', () => {
-    const words = ["Tiger", "Lion"];
-    const amount = [2, 1];
+test('format_plural() returns a pluralized word', () => {
+    const word1 = format_plural('tiger', 1);
+    const word2 = format_plural('lion', 2);
 
-    expect(format_plural(words[0], amount[0])).toBe('Tigers');
-    expect(format_plural(words[1], amount[1])).toBe('Lion');
-})
+    expect(word1).toBe('tiger');
+    expect(word2).toBe('lions');
+});
 
 test('format_url() returns a simplified url string', () => {
     const url1 = format_url('http://test.com/page/1');
